@@ -35,7 +35,7 @@ public class Main {
             post.slug = "-" + post.slug;
         }
         Path path = Paths.get(post.date + post.slug + ".md");
-        String header = "---\nlayout: post\ntitle: \"" + post.title + "\"\n---\n\n{{ page.title }}\n================\n\n";
+        String header = "---\nlayout: post\ntitle: \"" + post.title + "\"\n---\n\n";
         try (BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             bw.write(header);
             bw.write(post.html);
